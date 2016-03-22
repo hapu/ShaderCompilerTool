@@ -7,4 +7,4 @@ linux: clean
 	g++ $(SOURCE_FILES) -o linux/$(BUILD_NAME) $(LINUX_LIBS)
 
 clean:
-	rm -rf linux/
+	rm -rf linux windows
