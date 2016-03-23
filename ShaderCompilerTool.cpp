@@ -12,6 +12,12 @@ void ShaderCompilerTool::compile(const char *shader_path, GLenum shaderType) {
   unsigned int test_shader = glCreateShader(shaderType);
   {
     ifstream _file(shader_path, ios::binary);
+    if(!_file.is_open())
+    {
+        char error_message[200];
+        sprintf_s(error_message, 200, "Error: No such file named: %s\r\n", shader_path);
+        throw error_message;
+    }
     _file.seekg(0, _file.end);
     int len = _file.tellg();
     len++;
