@@ -19,5 +19,6 @@ int main(int argc, char* argv[]) {
   catch(const char *err)
   {
       std::cout << err << std::endl;
+      return -1;
   }
 }
