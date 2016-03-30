@@ -15,7 +15,7 @@ void ShaderCompilerTool::compile(const char *shader_path, GLenum shaderType) {
     if(!_file.is_open())
     {
         char error_message[200];
-        sprintf_s(error_message, 200, "Error: No such file named: %s\r\n", shader_path);
+        sprintf(error_message, "Error: No such file named: %s\r\n", shader_path);
         throw error_message;
     }
     _file.seekg(0, _file.end);
